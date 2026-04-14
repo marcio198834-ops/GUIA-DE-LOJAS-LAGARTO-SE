@@ -19,28 +19,6 @@ header {
   text-align: center;
   font-size: 22px;
   font-weight: bold;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-}
-
-/* CATEGORIAS */
-.categories {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 10px;
-}
-
-.cat {
-  background: #1c2633;
-  padding: 10px 15px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.cat:hover {
-  background: #2a3a4f;
 }
 
 /* BUSCA */
@@ -55,7 +33,6 @@ header {
   max-width: 420px;
   border-radius: 12px;
   border: none;
-  outline: none;
 }
 
 /* HOME */
@@ -69,33 +46,49 @@ header {
 /* CARD */
 .card {
   background: #141b25;
-  padding: 18px;
   border-radius: 16px;
+  overflow: hidden;
   cursor: pointer;
   transition: 0.3s;
   box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-  border: 1px solid rgba(255,255,255,0.05);
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  background: #1c2633;
+  transform: translateY(-5px);
 }
 
-/* PÁGINAS */
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 10px;
+}
+
+.card p {
+  margin: 0 10px 15px;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* PÁGINA LOJA */
 .page {
   display: none;
-  padding: 25px;
+  padding: 20px;
   text-align: center;
-  animation: fade 0.4s ease;
 }
 
-@keyframes fade {
-  from {opacity: 0; transform: translateY(10px);}
-  to {opacity: 1; transform: translateY(0);}
+/* IMAGEM LOJA */
+.store-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  margin-bottom: 15px;
 }
 
-/* CATEGORIAS DA LOJA */
+/* CATEGORIAS */
 .catbox {
   background: #141b25;
   margin: 12px auto;
@@ -113,7 +106,7 @@ header {
   max-width: 400px;
 }
 
-/* BOTÃO */
+/* BOTÕES */
 .btn {
   display: inline-block;
   margin-top: 15px;
@@ -121,12 +114,10 @@ header {
   background: linear-gradient(90deg, #4facfe, #00f2fe);
   color: white;
   border-radius: 12px;
-  cursor: pointer;
-  font-weight: bold;
   text-decoration: none;
+  font-weight: bold;
 }
 
-/* VOLTAR */
 .back {
   margin-top: 15px;
   display: inline-block;
@@ -136,7 +127,6 @@ header {
   cursor: pointer;
 }
 </style>
-
 </head>
 
 <body>
@@ -153,27 +143,33 @@ header {
 <!-- 🏠 HOME -->
 <div id="home">
 
+  <!-- GBARBOSA -->
   <div class="card" onclick="openStore('gb')">
-    🛒 GBarbosa
+    <img src="https://images.unsplash.com/photo-1604719312566-8912e2f8c0f1" />
+    <h3>GBarbosa</h3>
+    <p>Supermercado completo</p>
   </div>
 
+  <!-- BRICIO -->
   <div class="card" onclick="openStore('bricio')">
-    👕 Lojas Brício
+    <img src="https://images.unsplash.com/photo-1521334884684-d80222895322" />
+    <h3>Lojas Brício</h3>
+    <p>Moda e roupas</p>
   </div>
 
+  <!-- MAGALU -->
   <div class="card" onclick="openStore('magalu')">
-    📱 Magazine Luiza
-  </div>
-
-  <div class="card" onclick="openStore('pague')">
-    💊 Pague Menos
+    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" />
+    <h3>Magazine Luiza</h3>
+    <p>Eletrônicos</p>
   </div>
 
 </div>
 
-<!-- 🏪 GBARBOSA -->
+<!-- 🛒 GBARBOSA -->
 <div id="gb" class="page">
   <h1>GBarbosa 🛒</h1>
+  <img class="store-img" src="https://images.unsplash.com/photo-1604719312566-8912e2f8c0f1">
 
   <div class="catbox">
     🥩 Alimentos
@@ -184,16 +180,16 @@ header {
   <div class="catbox">
     🧃 Bebidas
     <div class="product">Refrigerante - R$ 6,99</div>
-    <div class="product">Suco - R$ 4,50</div>
   </div>
 
-  <a class="btn" href="https://maps.google.com/?q=GBarbosa+Lagarto" target="_blank">📍 Ver Mapa</a>
+  <a class="btn" target="_blank" href="https://maps.google.com/?q=GBarbosa+Lagarto">📍 Ver Mapa</a>
   <div class="back" onclick="back()">⬅ Voltar</div>
 </div>
 
 <!-- 👕 BRICIO -->
 <div id="bricio" class="page">
   <h1>Lojas Brício 👕</h1>
+  <img class="store-img" src="https://images.unsplash.com/photo-1521334884684-d80222895322">
 
   <div class="catbox">
     👕 Roupas
@@ -201,18 +197,14 @@ header {
     <div class="product">Vestido - R$ 79,90</div>
   </div>
 
-  <div class="catbox">
-    👖 Jeans
-    <div class="product">Calça Jeans - R$ 89,90</div>
-  </div>
-
-  <a class="btn" href="https://maps.google.com/?q=Lojas+Brício+Lagarto" target="_blank">📍 Ver Mapa</a>
+  <a class="btn" target="_blank" href="https://maps.google.com/?q=Lojas+Brício+Lagarto">📍 Ver Mapa</a>
   <div class="back" onclick="back()">⬅ Voltar</div>
 </div>
 
 <!-- 📱 MAGALU -->
 <div id="magalu" class="page">
   <h1>Magazine Luiza 📱</h1>
+  <img class="store-img" src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
 
   <div class="catbox">
     📱 Celulares
@@ -220,26 +212,7 @@ header {
     <div class="product">iPhone - R$ 4.999</div>
   </div>
 
-  <div class="catbox">
-    💻 Informática
-    <div class="product">Notebook - R$ 2.499</div>
-  </div>
-
-  <a class="btn" href="https://maps.google.com/?q=Magazine+Luiza+Lagarto" target="_blank">📍 Ver Mapa</a>
-  <div class="back" onclick="back()">⬅ Voltar</div>
-</div>
-
-<!-- 💊 PAGUE MENOS -->
-<div id="pague" class="page">
-  <h1>Pague Menos 💊</h1>
-
-  <div class="catbox">
-    💊 Remédios
-    <div class="product">Dipirona - R$ 5,00</div>
-    <div class="product">Vitaminas - R$ 12,00</div>
-  </div>
-
-  <a class="btn" href="https://maps.google.com/?q=Pague+Menos+Lagarto" target="_blank">📍 Ver Mapa</a>
+  <a class="btn" target="_blank" href="https://maps.google.com/?q=Magazine+Luiza+Lagarto">📍 Ver Mapa</a>
   <div class="back" onclick="back()">⬅ Voltar</div>
 </div>
 
