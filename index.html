@@ -9,10 +9,9 @@ body {
 margin: 0;
 font-family: Arial, sans-serif;
 background: #0b0f19;
-color: #fff;
+color: white;
 }
 
-/* HEADER */
 header {
 background: linear-gradient(90deg, #e50914, #ff2e63);
 padding: 25px;
@@ -21,45 +20,25 @@ font-size: 26px;
 font-weight: bold;
 }
 
-/* SEARCH */
-.search {
-text-align: center;
-padding: 20px;
-}
-
-.search input {
-width: 80%;
-max-width: 500px;
-padding: 12px;
-border-radius: 10px;
-border: none;
-outline: none;
-font-size: 16px;
-}
-
-/* CATEGORY TITLE */
 h2 {
-margin: 30px 20px 10px;
+margin: 25px 20px 10px;
 color: #00e5ff;
 border-left: 4px solid #00e5ff;
 padding-left: 10px;
 }
 
-/* GRID */
 .container {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 gap: 15px;
 padding: 0 20px 30px;
 }
 
-/* CARD */
 .card {
 background: #151c2c;
 padding: 15px;
 border-radius: 12px;
 transition: 0.3s;
-box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .card:hover {
@@ -69,7 +48,6 @@ background: #1d2740;
 
 .card h3 {
 margin: 0;
-font-size: 18px;
 }
 
 .card p {
@@ -77,21 +55,28 @@ font-size: 13px;
 opacity: 0.8;
 }
 
-/* BUTTON */
-a {
-display: inline-block;
+.btns {
 margin-top: 10px;
-padding: 8px 12px;
-background: #00e5ff;
-color: #000;
-text-decoration: none;
-border-radius: 8px;
-font-weight: bold;
-font-size: 13px;
+display: flex;
+gap: 10px;
 }
 
-a:hover {
-background: #00bcd4;
+a {
+text-decoration: none;
+padding: 8px 12px;
+border-radius: 8px;
+font-size: 13px;
+font-weight: bold;
+color: white;
+display: inline-block;
+}
+
+.maps {
+background: #4285F4;
+}
+
+.whatsapp {
+background: #25D366;
 }
 </style>
 
@@ -103,10 +88,6 @@ background: #00bcd4;
 🏪 Guia Comercial - Lagarto / Sergipe
 </header>
 
-<div class="search">
-<input type="text" placeholder="🔍 Buscar lojas (em breve funcionalidade)">
-</div>
-
 <!-- SUPERMERCADOS -->
 <h2>🛒 Supermercados</h2>
 <div class="container">
@@ -114,13 +95,19 @@ background: #00bcd4;
 <div class="card">
 <h3>GBarbosa</h3>
 <p>Supermercado completo</p>
-<a href="https://www.google.com/maps/search/GBarbosa+Lagarto" target="_blank">Ver no mapa</a>
+<div class="btns">
+<a class="maps" href="https://www.google.com/maps/search/GBarbosa+Lagarto" target="_blank">Mapa</a>
+<a class="whatsapp" href="https://wa.me/559999999999" target="_blank">WhatsApp</a>
+</div>
 </div>
 
 <div class="card">
 <h3>Super Mercado Couto</h3>
 <p>Mercado local</p>
-<a href="https://www.google.com/maps/search/Super+Mercado+Couto+Lagarto" target="_blank">Ver no mapa</a>
+<div class="btns">
+<a class="maps" href="https://www.google.com/maps/search/Super+Mercado+Couto+Lagarto" target="_blank">Mapa</a>
+<a class="whatsapp" href="https://wa.me/559999999999" target="_blank">WhatsApp</a>
+</div>
 </div>
 
 </div>
@@ -132,19 +119,28 @@ background: #00bcd4;
 <div class="card">
 <h3>Lojas Brício</h3>
 <p>Moda e calçados</p>
-<a href="https://www.google.com/maps/search/Lojas+Brício+Lagarto" target="_blank">Ver no mapa</a>
+<div class="btns">
+<a class="maps" href="https://www.google.com/maps/search/Lojas+Brício+Lagarto" target="_blank">Mapa</a>
+<a class="whatsapp" href="https://wa.me/559999999999" target="_blank">WhatsApp</a>
+</div>
 </div>
 
 <div class="card">
 <h3>Ed Cell Variedades</h3>
-<p>Acessórios e variedades</p>
-<a href="https://www.google.com/maps/search/Ed+Cell+Variedades+Lagarto" target="_blank">Ver no mapa</a>
+<p>Acessórios e celulares</p>
+<div class="btns">
+<a class="maps" href="https://www.google.com/maps/search/Ed+Cell+Variedades+Lagarto" target="_blank">Mapa</a>
+<a class="whatsapp" href="https://wa.me/559999999999" target="_blank">WhatsApp</a>
+</div>
 </div>
 
 <div class="card">
 <h3>Magnos Cell Variedades</h3>
 <p>Celulares e acessórios</p>
-<a href="https://www.google.com/maps/search/Magnos+Cell+Variedades+Lagarto" target="_blank">Ver no mapa</a>
+<div class="btns">
+<a class="maps" href="https://www.google.com/maps/search/Magnos+Cell+Variedades+Lagarto" target="_blank">Mapa</a>
+<a class="whatsapp" href="https://wa.me/559999999999" target="_blank">WhatsApp</a>
+</div>
 </div>
 
 </div>
@@ -155,8 +151,11 @@ background: #00bcd4;
 
 <div class="card">
 <h3>Magazine Luiza</h3>
-<p>Eletrodomésticos</p>
-<a href="https://www.google.com/maps/search/Magazine+Luiza+Lagarto" target="_blank">Ver no mapa</a>
+<p>Eletrodomésticos e eletrônicos</p>
+<div class="btns">
+<a class="maps" href="https://www.google.com/maps/search/Magazine+Luiza+Lagarto" target="_blank">Mapa</a>
+<a class="whatsapp" href="https://wa.me/559999999999" target="_blank">WhatsApp</a>
+</div>
 </div>
 
 </div>
@@ -168,13 +167,19 @@ background: #00bcd4;
 <div class="card">
 <h3>Farmácia Pague Menos</h3>
 <p>Medicamentos e saúde</p>
-<a href="https://www.google.com/maps/search/Pague+Menos+Lagarto" target="_blank">Ver no mapa</a>
+<div class="btns">
+<a class="maps" href="https://www.google.com/maps/search/Pague+Menos+Lagarto" target="_blank">Mapa</a>
+<a class="whatsapp" href="https://wa.me/559999999999" target="_blank">WhatsApp</a>
+</div>
 </div>
 
 <div class="card">
 <h3>Farmácias JB</h3>
 <p>Farmácia local</p>
-<a href="https://www.google.com/maps/search/Farmácias+JB+Lagarto" target="_blank">Ver no mapa</a>
+<div class="btns">
+<a class="maps" href="https://www.google.com/maps/search/Farmácias+JB+Lagarto" target="_blank">Mapa</a>
+<a class="whatsapp" href="https://wa.me/559999999999" target="_blank">WhatsApp</a>
+</div>
 </div>
 
 </div>
@@ -185,14 +190,20 @@ background: #00bcd4;
 
 <div class="card">
 <h3>Pão Nosso</h3>
-<p>Pães e café da manhã</p>
-<a href="https://www.google.com/maps/search/Pão+Nosso+Lagarto" target="_blank">Ver no mapa</a>
+<p>Padaria e café da manhã</p>
+<div class="btns">
+<a class="maps" href="https://www.google.com/maps/search/Pão+Nosso+Lagarto" target="_blank">Mapa</a>
+<a class="whatsapp" href="https://wa.me/559999999999" target="_blank">WhatsApp</a>
+</div>
 </div>
 
 <div class="card">
 <h3>Panali</h3>
 <p>Padaria local</p>
-<a href="https://www.google.com/maps/search/Panali+Lagarto" target="_blank">Ver no mapa</a>
+<div class="btns">
+<a class="maps" href="https://www.google.com/maps/search/Panali+Lagarto" target="_blank">Mapa</a>
+<a class="whatsapp" href="https://wa.me/559999999999" target="_blank">WhatsApp</a>
+</div>
 </div>
 
 </div>
@@ -204,7 +215,10 @@ background: #00bcd4;
 <div class="card">
 <h3>Material de Construção Armando</h3>
 <p>Materiais para obras</p>
-<a href="https://www.google.com/maps/search/Material+de+Construção+Armando+Lagarto" target="_blank">Ver no mapa</a>
+<div class="btns">
+<a class="maps" href="https://www.google.com/maps/search/Material+de+Construção+Armando+Lagarto" target="_blank">Mapa</a>
+<a class="whatsapp" href="https://wa.me/559999999999" target="_blank">WhatsApp</a>
+</div>
 </div>
 
 </div>
