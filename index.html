@@ -19,7 +19,15 @@ font-size: 26px;
 font-weight: bold;
 text-align: center;
 }
-
+<div style="text-align:center; padding:15px;">
+  <input 
+    type="text" 
+    id="search" 
+    placeholder="🔎 Buscar loja..." 
+    onkeyup="filtrarLojas()"
+    style="padding:10px; width:80%; max-width:400px; border-radius:8px; border:none;"
+  >
+</div>
 h2 {
 padding: 10px 20px;
 color: #00ffcc;
@@ -220,6 +228,21 @@ background: #25D366;
 </div>
 
 </div>
+<script>
+function filtrarLojas() {
+  let input = document.getElementById("search").value.toLowerCase();
+  let cards = document.getElementsByClassName("card");
 
+  for (let i = 0; i < cards.length; i++) {
+    let texto = cards[i].innerText.toLowerCase();
+
+    if (texto.includes(input)) {
+      cards[i].style.display = "block";
+    } else {
+      cards[i].style.display = "none";
+    }
+  }
+}
+</script>
 </body>
 </html>
