@@ -21,42 +21,8 @@ header {
   font-weight: bold;
 }
 
-/* CATEGORIAS */
-.categories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  padding: 15px;
-}
-
-.cat {
-  background: #333;
-  padding: 10px 15px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.cat:hover {
-  background: #555;
-}
-
-/* BUSCA */
-.search {
-  text-align: center;
-  padding: 10px;
-}
-
-.search input {
-  padding: 10px;
-  width: 80%;
-  max-width: 400px;
-  border-radius: 8px;
-  border: none;
-}
-
-/* LISTA */
-.container {
+/* HOME */
+#home {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
@@ -69,44 +35,48 @@ header {
   padding: 15px;
   border-radius: 10px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-/* PÁGINAS */
+.card:hover {
+  transform: scale(1.05);
+  background: #2a2a2a;
+}
+
+/* PÁGINA LOJA */
 .page {
   display: none;
-  padding: 25px;
-  text-align: center;
+  padding: 20px;
+}
+
+/* CATEGORIAS DA LOJA */
+.cat {
+  background: #222;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 8px;
 }
 
 /* PRODUTOS */
 .product {
-  background: #222;
-  margin: 10px auto;
+  background: #333;
+  margin: 8px 0;
   padding: 10px;
-  border-radius: 8px;
-  max-width: 400px;
+  border-radius: 6px;
 }
 
-/* BOTÕES */
+/* BOTÃO */
 .btn {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 15px;
   padding: 10px 15px;
   background: #4285F4;
   color: white;
   border-radius: 8px;
-  text-decoration: none;
-}
-
-.back {
-  margin-top: 20px;
-  display: inline-block;
-  padding: 10px 15px;
-  background: #444;
-  border-radius: 8px;
   cursor: pointer;
 }
 </style>
+
 </head>
 
 <body>
@@ -115,107 +85,102 @@ header {
 🏪 Guia de Lojas - Lagarto / SE
 </header>
 
-<!-- CATEGORIAS -->
-<div class="categories">
-  <div class="cat" onclick="showCat('super')">🛒 Supermercados</div>
-  <div class="cat" onclick="showCat('moda')">👕 Moda</div>
-  <div class="cat" onclick="showCat('farmacia')">💊 Farmácia</div>
-</div>
+<!-- 🏠 HOME -->
+<div id="home">
 
-<!-- BUSCA -->
-<div class="search">
-  <input type="text" id="search" placeholder="🔎 Buscar loja..." onkeyup="filtrar()">
-</div>
-
-<!-- LISTA LOJAS -->
-<div id="home" class="container">
-
-  <div class="card" data-cat="super" onclick="openPage('gb')">
+  <div class="card" onclick="openStore('gb')">
     🛒 GBarbosa
   </div>
 
-  <div class="card" data-cat="moda" onclick="openPage('bricio')">
+  <div class="card" onclick="openStore('bricio')">
     👕 Lojas Brício
   </div>
 
-  <div class="card" data-cat="farmacia" onclick="openPage('pague')">
-    💊 Pague Menos
+  <div class="card" onclick="openStore('magalu')">
+    📱 Magazine Luiza
   </div>
 
 </div>
 
-<!-- 🔵 GBARBOSA -->
+<!-- 🏪 LOJA GBARBOSA -->
 <div id="gb" class="page">
   <h1>GBarbosa 🛒</h1>
 
-  <div class="product">🍞 Pão - R$ 6,00 (PROMO)</div>
-  <div class="product">🥩 Carne - R$ 29,90/kg</div>
-  <div class="product">🥤 Refrigerante - R$ 7,50</div>
+  <div class="cat">
+    🥩 Alimentos
+    <div class="product">Arroz - R$ 5,99</div>
+    <div class="product">Feijão - R$ 7,49</div>
+  </div>
 
-  <a class="btn" href="https://maps.google.com/?q=GBarbosa+Lagarto" target="_blank">📍 Ver Mapa</a>
-  <div class="back" onclick="back()">⬅ Voltar</div>
+  <div class="cat">
+    🧃 Bebidas
+    <div class="product">Refrigerante - R$ 6,99</div>
+    <div class="product">Suco - R$ 4,50</div>
+  </div>
+
+  <div class="cat">
+    🧼 Limpeza
+    <div class="product">Sabão - R$ 2,99</div>
+    <div class="product">Detergente - R$ 1,99</div>
+  </div>
+
+  <div class="btn" onclick="back()">⬅ Voltar</div>
 </div>
 
-<!-- 🟢 BRICIO -->
+<!-- 👕 LOJA BRICIO -->
 <div id="bricio" class="page">
   <h1>Lojas Brício 👕</h1>
 
-  <div class="product">👕 Camisa Social - R$ 59,90</div>
-  <div class="product">👖 Calça Jeans - R$ 89,90</div>
-  <div class="product">👟 Tênis - PROMO 20% OFF</div>
+  <div class="cat">
+    👕 Roupas
+    <div class="product">Camisa - R$ 49,90</div>
+    <div class="product">Vestido - R$ 79,90</div>
+  </div>
 
-  <a class="btn" href="https://maps.google.com/?q=Lojas+Brício+Lagarto" target="_blank">📍 Ver Mapa</a>
-  <div class="back" onclick="back()">⬅ Voltar</div>
+  <div class="cat">
+    👖 Jeans
+    <div class="product">Calça Jeans - R$ 89,90</div>
+  </div>
+
+  <div class="btn" onclick="back()">⬅ Voltar</div>
 </div>
 
-<!-- 🟣 PAGUE MENOS -->
-<div id="pague" class="page">
-  <h1>Pague Menos 💊</h1>
+<!-- 📱 MAGAZINE -->
+<div id="magalu" class="page">
+  <h1>Magazine Luiza 📱</h1>
 
-  <div class="product">💊 Dipirona - R$ 5,00</div>
-  <div class="product">💊 Vitaminas - PROMO 2 por 1</div>
-  <div class="product">🧴 Protetor Solar - R$ 39,90</div>
+  <div class="cat">
+    📱 Celulares
+    <div class="product">Samsung - R$ 999</div>
+    <div class="product">iPhone - R$ 4.999</div>
+  </div>
 
-  <a class="btn" href="https://maps.google.com/?q=Pague+Menos+Lagarto" target="_blank">📍 Ver Mapa</a>
-  <div class="back" onclick="back()">⬅ Voltar</div>
+  <div class="cat">
+    💻 Informática
+    <div class="product">Notebook - R$ 2.499</div>
+  </div>
+
+  <div class="btn" onclick="back()">⬅ Voltar</div>
 </div>
 
 <script>
 
 /* ABRIR LOJA */
-function openPage(id) {
+function openStore(id) {
   document.getElementById("home").style.display = "none";
-  document.querySelectorAll(".page").forEach(p => p.style.display = "none");
+
+  let pages = document.querySelectorAll(".page");
+  pages.forEach(p => p.style.display = "none");
+
   document.getElementById(id).style.display = "block";
 }
 
 /* VOLTAR */
 function back() {
   document.getElementById("home").style.display = "grid";
-  document.querySelectorAll(".page").forEach(p => p.style.display = "none");
-}
 
-/* BUSCA */
-function filtrar() {
-  let input = document.getElementById("search").value.toLowerCase();
-  let cards = document.querySelectorAll(".card");
-
-  cards.forEach(c => {
-    c.style.display = c.innerText.toLowerCase().includes(input)
-      ? "block"
-      : "none";
-  });
-}
-
-/* CATEGORIA */
-function showCat(cat) {
-  let cards = document.querySelectorAll(".card");
-
-  cards.forEach(c => {
-    c.style.display = (cat === 'all' || c.dataset.cat === cat)
-      ? "block"
-      : "none";
-  });
+  let pages = document.querySelectorAll(".page");
+  pages.forEach(p => p.style.display = "none");
 }
 
 </script>
