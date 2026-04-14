@@ -2,7 +2,18 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Guia de Lojas - Lagarto SE</title>
+<title>Guia de Lojas Lagarto</title>
+
+<!-- PWA (APP) -->
+<link rel="manifest" href="data:application/json,{
+  \"name\":\"Guia de Lojas Lagarto\",
+  \"short_name\":\"Lojas\",
+  \"start_url\":\".\",
+  \"display\":\"standalone\",
+  \"background_color\":\"#0b0f14\",
+  \"theme_color\":\"#ff2d55\"
+}">
+<meta name="theme-color" content="#ff2d55">
 
 <style>
 body {
@@ -14,11 +25,11 @@ body {
 
 /* HEADER */
 header {
-  background: linear-gradient(90deg, #ff2d55, #ff7a18);
+  background: linear-gradient(90deg,#ff2d55,#ff7a18);
   padding: 20px;
   text-align: center;
-  font-size: 22px;
   font-weight: bold;
+  font-size: 20px;
 }
 
 /* BUSCA */
@@ -28,9 +39,9 @@ header {
 }
 
 .search input {
-  padding: 12px;
   width: 85%;
-  max-width: 420px;
+  max-width: 400px;
+  padding: 12px;
   border-radius: 12px;
   border: none;
 }
@@ -38,91 +49,64 @@ header {
 /* HOME */
 #home {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 15px;
+  padding: 15px;
 }
 
 /* CARD */
 .card {
   background: #141b25;
-  border-radius: 16px;
-  overflow: hidden;
+  padding: 15px;
+  border-radius: 15px;
   cursor: pointer;
   transition: 0.3s;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 
 .card:hover {
   transform: translateY(-5px);
 }
 
-.card img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-}
-
-.card h3 {
-  margin: 10px;
-}
-
-.card p {
-  margin: 0 10px 15px;
-  font-size: 13px;
-  opacity: 0.7;
-}
-
-/* PÁGINA LOJA */
+/* PÁGINAS */
 .page {
   display: none;
   padding: 20px;
-  text-align: center;
-}
-
-/* IMAGEM LOJA */
-.store-img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 15px;
-  margin-bottom: 15px;
 }
 
 /* CATEGORIAS */
 .catbox {
-  background: #141b25;
-  margin: 12px auto;
+  background: #1a2230;
   padding: 12px;
+  margin: 10px auto;
   border-radius: 12px;
   max-width: 500px;
 }
 
 /* PRODUTOS */
 .product {
-  background: #1f2a38;
-  margin: 8px auto;
+  background: #222c3d;
   padding: 10px;
-  border-radius: 10px;
-  max-width: 400px;
+  margin: 6px 0;
+  border-radius: 8px;
 }
 
 /* BOTÕES */
 .btn {
   display: inline-block;
-  margin-top: 15px;
-  padding: 12px 16px;
-  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  padding: 10px 15px;
+  background: #4facfe;
+  border-radius: 10px;
   color: white;
-  border-radius: 12px;
   text-decoration: none;
-  font-weight: bold;
+  margin-top: 10px;
 }
 
 .back {
-  margin-top: 15px;
   display: inline-block;
-  padding: 10px 14px;
-  background: #2c2f36;
+  margin-top: 10px;
+  padding: 10px;
+  background: #333;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -131,115 +115,108 @@ header {
 
 <body>
 
-<header>
-🏪 Guia de Lojas - Lagarto / SE
-</header>
+<header>🏪 Guia de Lojas - Lagarto SE</header>
 
-<!-- 🔎 BUSCA -->
 <div class="search">
-  <input type="text" id="search" placeholder="Buscar loja..." onkeyup="filter()">
+<input id="search" placeholder="Buscar loja..." onkeyup="buscar()">
 </div>
 
-<!-- 🏠 HOME -->
+<!-- HOME -->
 <div id="home">
 
-  <!-- GBARBOSA -->
   <div class="card" onclick="openStore('gb')">
-    <img src="https://images.unsplash.com/photo-1604719312566-8912e2f8c0f1" />
-    <h3>GBarbosa</h3>
-    <p>Supermercado completo</p>
+    🛒 GBarbosa
   </div>
 
-  <!-- BRICIO -->
   <div class="card" onclick="openStore('bricio')">
-    <img src="https://images.unsplash.com/photo-1521334884684-d80222895322" />
-    <h3>Lojas Brício</h3>
-    <p>Moda e roupas</p>
+    👕 Lojas Brício
   </div>
 
-  <!-- MAGALU -->
   <div class="card" onclick="openStore('magalu')">
-    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" />
-    <h3>Magazine Luiza</h3>
-    <p>Eletrônicos</p>
+    📱 Magazine Luiza
   </div>
 
 </div>
 
-<!-- 🛒 GBARBOSA -->
+<!-- LOJA 1 -->
 <div id="gb" class="page">
-  <h1>GBarbosa 🛒</h1>
-  <img class="store-img" src="https://images.unsplash.com/photo-1604719312566-8912e2f8c0f1">
+<h2>GBarbosa 🛒</h2>
 
-  <div class="catbox">
-    🥩 Alimentos
-    <div class="product">Arroz - R$ 5,99</div>
-    <div class="product">Feijão - R$ 7,49</div>
-  </div>
-
-  <div class="catbox">
-    🧃 Bebidas
-    <div class="product">Refrigerante - R$ 6,99</div>
-  </div>
-
-  <a class="btn" target="_blank" href="https://maps.google.com/?q=GBarbosa+Lagarto">📍 Ver Mapa</a>
-  <div class="back" onclick="back()">⬅ Voltar</div>
+<div class="catbox">
+🔥 OFERTAS
+<div class="product">Carne - R$ 24,90/kg</div>
+<div class="product">Arroz - R$ 5,99</div>
 </div>
 
-<!-- 👕 BRICIO -->
+<div class="catbox">
+🥩 Açougue
+<div class="product">Frango - R$ 12,90</div>
+</div>
+
+<div class="catbox">
+🧃 Bebidas
+<div class="product">Coca-Cola - R$ 6,99</div>
+</div>
+
+<a class="btn" target="_blank" href="https://maps.google.com/?q=GBarbosa+Lagarto">📍 Mapa</a>
+<div class="back" onclick="back()">⬅ Voltar</div>
+</div>
+
+<!-- LOJA 2 -->
 <div id="bricio" class="page">
-  <h1>Lojas Brício 👕</h1>
-  <img class="store-img" src="https://images.unsplash.com/photo-1521334884684-d80222895322">
+<h2>Brício 👕</h2>
 
-  <div class="catbox">
-    👕 Roupas
-    <div class="product">Camisa - R$ 49,90</div>
-    <div class="product">Vestido - R$ 79,90</div>
-  </div>
-
-  <a class="btn" target="_blank" href="https://maps.google.com/?q=Lojas+Brício+Lagarto">📍 Ver Mapa</a>
-  <div class="back" onclick="back()">⬅ Voltar</div>
+<div class="catbox">
+🔥 OFERTAS
+<div class="product">Vestido - 50% OFF</div>
 </div>
 
-<!-- 📱 MAGALU -->
+<div class="catbox">
+👕 Moda
+<div class="product">Camisa - R$ 49,90</div>
+<div class="product">Calça - R$ 89,90</div>
+</div>
+
+<a class="btn" target="_blank" href="https://maps.google.com/?q=Lojas+Brício+Lagarto">📍 Mapa</a>
+<div class="back" onclick="back()">⬅ Voltar</div>
+</div>
+
+<!-- LOJA 3 -->
 <div id="magalu" class="page">
-  <h1>Magazine Luiza 📱</h1>
-  <img class="store-img" src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+<h2>Magazine Luiza 📱</h2>
 
-  <div class="catbox">
-    📱 Celulares
-    <div class="product">Samsung - R$ 999</div>
-    <div class="product">iPhone - R$ 4.999</div>
-  </div>
+<div class="catbox">
+🔥 OFERTAS
+<div class="product">iPhone - Promo</div>
+</div>
 
-  <a class="btn" target="_blank" href="https://maps.google.com/?q=Magazine+Luiza+Lagarto">📍 Ver Mapa</a>
-  <div class="back" onclick="back()">⬅ Voltar</div>
+<div class="catbox">
+📱 Eletrônicos
+<div class="product">Samsung - R$ 999</div>
+<div class="product">Notebook - R$ 2.499</div>
+</div>
+
+<a class="btn" target="_blank" href="https://maps.google.com/?q=Magazine+Luiza+Lagarto">📍 Mapa</a>
+<div class="back" onclick="back()">⬅ Voltar</div>
 </div>
 
 <script>
 
-/* ABRIR LOJA */
-function openStore(id) {
-  document.getElementById("home").style.display = "none";
-  document.querySelectorAll(".page").forEach(p => p.style.display = "none");
-  document.getElementById(id).style.display = "block";
+function openStore(id){
+  document.getElementById("home").style.display="none";
+  document.querySelectorAll(".page").forEach(p=>p.style.display="none");
+  document.getElementById(id).style.display="block";
 }
 
-/* VOLTAR */
-function back() {
-  document.getElementById("home").style.display = "grid";
-  document.querySelectorAll(".page").forEach(p => p.style.display = "none");
+function back(){
+  document.getElementById("home").style.display="grid";
+  document.querySelectorAll(".page").forEach(p=>p.style.display="none");
 }
 
-/* BUSCA */
-function filter() {
-  let input = document.getElementById("search").value.toLowerCase();
-  let cards = document.querySelectorAll(".card");
-
-  cards.forEach(c => {
-    c.style.display = c.innerText.toLowerCase().includes(input)
-      ? "block"
-      : "none";
+function buscar(){
+  let v=document.getElementById("search").value.toLowerCase();
+  document.querySelectorAll(".card").forEach(c=>{
+    c.style.display=c.innerText.toLowerCase().includes(v)?"block":"none";
   });
 }
 
