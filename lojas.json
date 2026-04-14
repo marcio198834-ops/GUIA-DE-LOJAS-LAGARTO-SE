@@ -1,0 +1,20 @@
+[
+  {
+    "nome": "Loja Blitz",
+    "categoria": "Moda",
+    "avaliacao": 4.5,
+    "endereco": "Centro de Lagarto SE"
+  },
+  {
+    "nome": "Loola Store",
+    "categoria": "Moda",
+    "avaliacao": 4.2,
+    "endereco": "Centro de Lagarto SE"
+  },
+  {
+    "nome": "Lag Iphones",
+    "categoria": "Eletrônicos",
+    "avaliacao": 4.6,
+    "endereco": "Centro de Lagarto SE"
+  }
+]
