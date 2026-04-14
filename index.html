@@ -12,21 +12,22 @@ body {
   color: white;
 }
 
+/* HEADER */
 header {
   background: #e50914;
   padding: 20px;
-  font-size: 26px;
-  font-weight: bold;
   text-align: center;
+  font-size: 24px;
+  font-weight: bold;
 }
 
-/* 🔎 BUSCA */
-.search-box {
+/* BUSCA */
+.search {
   text-align: center;
   padding: 15px;
 }
 
-.search-box input {
+.search input {
   padding: 10px;
   width: 80%;
   max-width: 400px;
@@ -34,184 +35,152 @@ header {
   border: none;
 }
 
-h2 {
-  padding: 10px 20px;
-  color: #00ffcc;
-}
-
+/* LISTA */
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
-  padding: 0 20px 30px;
+  padding: 20px;
 }
 
+/* CARD */
 .card {
   background: #1c1c1c;
   padding: 15px;
   border-radius: 10px;
+  cursor: pointer;
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
   background: #2a2a2a;
 }
 
-.card h3 {
-  margin: 0;
+/* PÁGINA INTERNA */
+.page {
+  display: none;
+  padding: 30px;
+  text-align: center;
 }
 
-.card p {
-  font-size: 13px;
-  opacity: 0.8;
-}
-
-.btns {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
-}
-
-a {
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: bold;
-  color: white;
+.back {
   display: inline-block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background: #333;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-.maps {
+/* BOTÃO MAPA */
+.map {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 15px;
   background: #4285F4;
-}
-
-.whatsapp {
-  background: #25D366;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
-🏪 Guia de Lojas - Lagarto / Sergipe
+🏪 Guia de Lojas - Lagarto / SE
 </header>
 
 <!-- 🔎 BUSCA -->
-<div class="search-box">
-  <input 
-    type="text" 
-    id="search" 
-    placeholder="🔎 Buscar loja..." 
-    onkeyup="filtrarLojas()"
-  >
+<div class="search">
+  <input type="text" id="search" placeholder="🔎 Buscar loja..." onkeyup="filtrar()">
 </div>
 
-<!-- SUPERMERCADOS -->
-<h2>🛒 Supermercados</h2>
-<div class="container">
+<!-- 🏠 LISTA -->
+<div id="home" class="container">
 
-<div class="card">
-<h3>GBarbosa</h3>
-<p>Supermercado completo</p>
-<div class="btns">
-<a class="maps" href="https://www.google.com/maps/search/GBarbosa+Lagarto" target="_blank">Mapa</a>
-<a class="whatsapp" href="https://wa.me/559999999999" target="_blank">WhatsApp</a>
-</div>
-</div>
+  <div class="card" onclick="abrir('gb')">
+    <h3>GBarbosa</h3>
+    <p>Supermercado completo</p>
+  </div>
 
-<div class="card">
-<h3>Super Mercado Couto</h3>
-<p>Mercado local</p>
-<div class="btns">
-<a class="maps" href="https://www.google.com/maps/search/Super+Mercado+Couto+Lagarto" target="_blank">Mapa</a>
-<a class="whatsapp" href="https://wa.me/559999999999" target="_blank">WhatsApp</a>
-</div>
-</div>
+  <div class="card" onclick="abrir('bricio')">
+    <h3>Lojas Brício</h3>
+    <p>Moda e calçados</p>
+  </div>
+
+  <div class="card" onclick="abrir('magalu')">
+    <h3>Magazine Luiza</h3>
+    <p>Eletrônicos</p>
+  </div>
+
+  <div class="card" onclick="abrir('pague')">
+    <h3>Pague Menos</h3>
+    <p>Farmácia</p>
+  </div>
 
 </div>
 
-<!-- LOJAS -->
-<h2>👕 Lojas e Variedades</h2>
-<div class="container">
-
-<div class="card">
-<h3>Lojas Brício</h3>
-<p>Moda e calçados</p>
-<div class="btns">
-<a class="maps" href="https://www.google.com/maps/search/Lojas+Brício+Lagarto" target="_blank">Mapa</a>
-<a class="whatsapp" href="https://wa.me/559999999999" target="_blank">WhatsApp</a>
-</div>
+<!-- 📄 GBARBOSA -->
+<div id="gb" class="page">
+  <h1>GBarbosa 🛒</h1>
+  <p>Supermercado completo em Lagarto-SE</p>
+  <a class="map" href="https://www.google.com/maps/search/GBarbosa+Lagarto" target="_blank">📍 Abrir Mapa</a>
+  <div class="back" onclick="voltar()">⬅ Voltar</div>
 </div>
 
-<div class="card">
-<h3>Ed Cell Variedades</h3>
-<p>Acessórios e celulares</p>
-<div class="btns">
-<a class="maps" href="https://www.google.com/maps/search/Ed+Cell+Variedades+Lagarto" target="_blank">Mapa</a>
-<a class="whatsapp" href="https://wa.me/559999999999" target="_blank">WhatsApp</a>
-</div>
-</div>
-
-<div class="card">
-<h3>Magnos Cell Variedades</h3>
-<p>Celulares e acessórios</p>
-<div class="btns">
-<a class="maps" href="https://www.google.com/maps/search/Magnos+Cell+Variedades+Lagarto" target="_blank">Mapa</a>
-<a class="whatsapp" href="https://wa.me/559999999999" target="_blank">WhatsApp</a>
-</div>
+<!-- 📄 BRICIO -->
+<div id="bricio" class="page">
+  <h1>Lojas Brício 👕</h1>
+  <p>Moda e calçados</p>
+  <a class="map" href="https://www.google.com/maps/search/Lojas+Brício+Lagarto" target="_blank">📍 Abrir Mapa</a>
+  <div class="back" onclick="voltar()">⬅ Voltar</div>
 </div>
 
+<!-- 📄 MAGALU -->
+<div id="magalu" class="page">
+  <h1>Magazine Luiza 📱</h1>
+  <p>Eletrônicos e eletrodomésticos</p>
+  <a class="map" href="https://www.google.com/maps/search/Magazine+Luiza+Lagarto" target="_blank">📍 Abrir Mapa</a>
+  <div class="back" onclick="voltar()">⬅ Voltar</div>
 </div>
 
-<!-- ELETRÔNICOS -->
-<h2>📱 Eletrônicos</h2>
-<div class="container">
-
-<div class="card">
-<h3>Magazine Luiza</h3>
-<p>Eletrodomésticos e eletrônicos</p>
-<div class="btns">
-<a class="maps" href="https://www.google.com/maps/search/Magazine+Luiza+Lagarto" target="_blank">Mapa</a>
-<a class="whatsapp" href="https://wa.me/559999999999" target="_blank">WhatsApp</a>
-</div>
-</div>
-
-</div>
-
-<!-- FARMÁCIAS -->
-<h2>💊 Farmácias</h2>
-<div class="container">
-
-<div class="card">
-<h3>Farmácia Pague Menos</h3>
-<p>Medicamentos e saúde</p>
-<div class="btns">
-<a class="maps" href="https://www.google.com/maps/search/Pague+Menos+Lagarto" target="_blank">Mapa</a>
-<a class="whatsapp" href="https://wa.me/559999999999" target="_blank">WhatsApp</a>
-</div>
-</div>
-
+<!-- 📄 FARMÁCIA -->
+<div id="pague" class="page">
+  <h1>Pague Menos 💊</h1>
+  <p>Farmácia e saúde</p>
+  <a class="map" href="https://www.google.com/maps/search/Pague+Menos+Lagarto" target="_blank">📍 Abrir Mapa</a>
+  <div class="back" onclick="voltar()">⬅ Voltar</div>
 </div>
 
 <script>
-function filtrarLojas() {
+
+/* 🔎 BUSCA */
+function filtrar() {
   let input = document.getElementById("search").value.toLowerCase();
-  let cards = document.getElementsByClassName("card");
+  let cards = document.querySelectorAll(".card");
 
-  for (let i = 0; i < cards.length; i++) {
-    let texto = cards[i].innerText.toLowerCase();
-
-    if (texto.includes(input)) {
-      cards[i].style.display = "block";
-    } else {
-      cards[i].style.display = "none";
-    }
-  }
+  cards.forEach(card => {
+    let text = card.innerText.toLowerCase();
+    card.style.display = text.includes(input) ? "block" : "none";
+  });
 }
+
+/* 📄 ABRIR PÁGINA */
+function abrir(id) {
+  document.getElementById("home").style.display = "none";
+  document.querySelectorAll(".page").forEach(p => p.style.display = "none");
+  document.getElementById(id).style.display = "block";
+}
+
+/* 🔙 VOLTAR */
+function voltar() {
+  document.getElementById("home").style.display = "grid";
+  document.querySelectorAll(".page").forEach(p => p.style.display = "none");
+}
+
 </script>
 
 </body>
