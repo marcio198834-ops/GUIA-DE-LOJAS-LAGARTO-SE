@@ -2,65 +2,96 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Guia de Lojas - Lagarto SE</title>
+<title>Guia Comercial - Lagarto SE</title>
 
 <style>
 body {
 margin: 0;
-font-family: Arial;
-background: #0f0f0f;
-color: white;
+font-family: Arial, sans-serif;
+background: #0b0f19;
+color: #fff;
 }
 
+/* HEADER */
 header {
-background: #e50914;
-padding: 20px;
+background: linear-gradient(90deg, #e50914, #ff2e63);
+padding: 25px;
+text-align: center;
 font-size: 26px;
 font-weight: bold;
+}
+
+/* SEARCH */
+.search {
 text-align: center;
-}
-
-h2 {
-padding: 10px 20px;
-color: #00ffcc;
-}
-
-.container {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 15px;
 padding: 20px;
 }
 
-.card {
-background: #1c1c1c;
-padding: 15px;
+.search input {
+width: 80%;
+max-width: 500px;
+padding: 12px;
 border-radius: 10px;
+border: none;
+outline: none;
+font-size: 16px;
+}
+
+/* CATEGORY TITLE */
+h2 {
+margin: 30px 20px 10px;
+color: #00e5ff;
+border-left: 4px solid #00e5ff;
+padding-left: 10px;
+}
+
+/* GRID */
+.container {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 15px;
+padding: 0 20px 30px;
+}
+
+/* CARD */
+.card {
+background: #151c2c;
+padding: 15px;
+border-radius: 12px;
 transition: 0.3s;
+box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .card:hover {
-transform: scale(1.03);
-background: #2a2a2a;
+transform: translateY(-5px);
+background: #1d2740;
 }
 
-h3 {
-margin-top: 0;
-color: #ffffff;
+.card h3 {
+margin: 0;
+font-size: 18px;
 }
 
-.btns {
-margin-top: 10px;
+.card p {
+font-size: 13px;
+opacity: 0.8;
 }
 
+/* BUTTON */
 a {
-text-decoration: none;
-color: white;
-padding: 8px;
-border-radius: 5px;
-font-size: 14px;
 display: inline-block;
-background: #4285F4;
+margin-top: 10px;
+padding: 8px 12px;
+background: #00e5ff;
+color: #000;
+text-decoration: none;
+border-radius: 8px;
+font-weight: bold;
+font-size: 13px;
+}
+
+a:hover {
+background: #00bcd4;
 }
 </style>
 
@@ -69,8 +100,12 @@ background: #4285F4;
 <body>
 
 <header>
-🏪 Guia de Lojas - Lagarto / Sergipe
+🏪 Guia Comercial - Lagarto / Sergipe
 </header>
+
+<div class="search">
+<input type="text" placeholder="🔍 Buscar lojas (em breve funcionalidade)">
+</div>
 
 <!-- SUPERMERCADOS -->
 <h2>🛒 Supermercados</h2>
@@ -78,32 +113,37 @@ background: #4285F4;
 
 <div class="card">
 <h3>GBarbosa</h3>
+<p>Supermercado completo</p>
 <a href="https://www.google.com/maps/search/GBarbosa+Lagarto" target="_blank">Ver no mapa</a>
 </div>
 
 <div class="card">
 <h3>Super Mercado Couto</h3>
+<p>Mercado local</p>
 <a href="https://www.google.com/maps/search/Super+Mercado+Couto+Lagarto" target="_blank">Ver no mapa</a>
 </div>
 
 </div>
 
-<!-- ROUPAS / VARIEDADES -->
+<!-- LOJAS -->
 <h2>👕 Lojas e Variedades</h2>
 <div class="container">
 
 <div class="card">
 <h3>Lojas Brício</h3>
+<p>Moda e calçados</p>
 <a href="https://www.google.com/maps/search/Lojas+Brício+Lagarto" target="_blank">Ver no mapa</a>
 </div>
 
 <div class="card">
 <h3>Ed Cell Variedades</h3>
+<p>Acessórios e variedades</p>
 <a href="https://www.google.com/maps/search/Ed+Cell+Variedades+Lagarto" target="_blank">Ver no mapa</a>
 </div>
 
 <div class="card">
 <h3>Magnos Cell Variedades</h3>
+<p>Celulares e acessórios</p>
 <a href="https://www.google.com/maps/search/Magnos+Cell+Variedades+Lagarto" target="_blank">Ver no mapa</a>
 </div>
 
@@ -115,6 +155,7 @@ background: #4285F4;
 
 <div class="card">
 <h3>Magazine Luiza</h3>
+<p>Eletrodomésticos</p>
 <a href="https://www.google.com/maps/search/Magazine+Luiza+Lagarto" target="_blank">Ver no mapa</a>
 </div>
 
@@ -126,11 +167,13 @@ background: #4285F4;
 
 <div class="card">
 <h3>Farmácia Pague Menos</h3>
-<a href="https://www.google.com/maps/search/Farmácia+Pague+Menos+Lagarto" target="_blank">Ver no mapa</a>
+<p>Medicamentos e saúde</p>
+<a href="https://www.google.com/maps/search/Pague+Menos+Lagarto" target="_blank">Ver no mapa</a>
 </div>
 
 <div class="card">
 <h3>Farmácias JB</h3>
+<p>Farmácia local</p>
 <a href="https://www.google.com/maps/search/Farmácias+JB+Lagarto" target="_blank">Ver no mapa</a>
 </div>
 
@@ -142,11 +185,13 @@ background: #4285F4;
 
 <div class="card">
 <h3>Pão Nosso</h3>
+<p>Pães e café da manhã</p>
 <a href="https://www.google.com/maps/search/Pão+Nosso+Lagarto" target="_blank">Ver no mapa</a>
 </div>
 
 <div class="card">
 <h3>Panali</h3>
+<p>Padaria local</p>
 <a href="https://www.google.com/maps/search/Panali+Lagarto" target="_blank">Ver no mapa</a>
 </div>
 
@@ -158,6 +203,7 @@ background: #4285F4;
 
 <div class="card">
 <h3>Material de Construção Armando</h3>
+<p>Materiais para obras</p>
 <a href="https://www.google.com/maps/search/Material+de+Construção+Armando+Lagarto" target="_blank">Ver no mapa</a>
 </div>
 
